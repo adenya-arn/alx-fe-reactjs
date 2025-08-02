@@ -8,7 +8,7 @@ function Counter() {
       <h2>Counter</h2> <br />
       <p>Current count: {count}</p>
       <br />
-      <button onClick={() => setCount(count + 1)}>Increament</button>
+      <button onClick={() => setCount(count + 1)}>Increment</button>
       <br /> <br />
       <button onClick={() => setCount(count - 1)}>Decrement</button>
       <br /> <br />
