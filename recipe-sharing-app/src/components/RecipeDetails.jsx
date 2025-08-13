@@ -9,7 +9,7 @@ export default function RecipeDetails() {
   const recipeId = Number(id);
 
   const recipe = useRecipeStore((state) =>
-    state.recipes.find((r) => r.id === recipeId)
+    state.recipes.find((recipe) => recipe.id === recipeId)
   );
 
   const deleteRecipe = useRecipeStore((state) => state.deleteRecipe);
