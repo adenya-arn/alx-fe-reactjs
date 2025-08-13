@@ -5,7 +5,7 @@ import AddRecipeForm from "./components/AddRecipeForm";
 import { Link } from "react-router-dom";
 import SearchBar from "./components/SearchBar";
 import FavoriteList from "./components/FavoritesList";
-import RecommendationsList from "./components/RecomendationsList";
+import RecommendationsList from "./components/RecommendationsList";
 
 function App() {
   return (
