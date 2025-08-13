@@ -1,6 +1,6 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useState } from "react";
-import useRecipeStore from "../store/recipeStore";
+import useRecipeStore from "./recipeStore";
 
 export default function RecipeDetails() {
   const { id } = useParams();
