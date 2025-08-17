@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const token = import.meta.env.VITE_APP_GITHUB_API_KEY;
-const BASE_URL = "https://api.github.com/search/users";
+const BASE_URL = "https://api.github.com/search/users?q";
 
 // Function to fetch GitHub users with filters
 const fetchUserData = async (username, location, minRepos) => {
@@ -23,7 +23,7 @@ const fetchUserData = async (username, location, minRepos) => {
       return [];
     }
 
-    const response = await axios.get(`${BASE_URL}?q=${query.trim()}`, {
+    const response = await axios.get(`${BASE_URL}?${query.trim()}`, {
       headers: { Authorization: `token ${token}` },
     });
 
