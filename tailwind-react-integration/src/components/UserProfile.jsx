@@ -1,6 +1,6 @@
 function UserProfile() {
   return (
-    <div className="bg-gray-100 p-8 max-w-sm mx-auto my-20 rounded-lg shadow-lg hover:shadow-xl">
+    <div className="bg-gray-100 sm:p-4 md:p-8 max-w-sm mx-auto my-20 rounded-lg shadow-lg hover:shadow-xl">
       <img
         src="https://via.placeholder.com/150"
         alt="User"
@@ -12,7 +12,8 @@ function UserProfile() {
       <h1
         className="mt-4 font-bold 
                      text-lg sm:text-xl md:text-2xl 
-                     text-gray-800
+                     text-blue-800
+                     my-4
                      hover:text-blue-500"
       >
         John Doe
