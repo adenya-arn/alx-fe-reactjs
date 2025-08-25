@@ -10,7 +10,7 @@ function UserProfile() {
         src="https://via.placeholder.com/150"
         alt="User"
         className="mx-auto rounded-full 
-                   w-24 h-24 sm:w-28 sm:h-28 md:w-36 md:h-36 
+                   w-24 h-24 sm:w-24 sm:h-24 md:w-36 md:h-36 
                    object-cover hover:scale-110
                    transition-transform duration-300 ease-in-out"
       />
