@@ -58,7 +58,7 @@ const AddRecipeForm = () => {
             type="text"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
-            className="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+            className="w-full p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
             placeholder="Enter recipe title"
           />
           {errors.title && (
