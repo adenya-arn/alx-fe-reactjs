@@ -6,29 +6,46 @@ const AddRecipeForm = () => {
   const [steps, setSteps] = useState("");
   const [errors, setErrors] = useState({});
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const validate = () => {
+    const newErrors = {};
+
+    if (!title.trim()) {
+      newErrors.title = "Recipe title is required";
+    }
+
+    if (!ingredients.trim()) {
+      newErrors.title = "Ingredients are required.";
+    } else {
+      const ingredients = ingredients
+        .split(",")
+        .map((i) => i.trim())
+        .filter(Boolean);
+      if (ingredientsList.length < 2) {
+        newErrors.ingredients =
+          "Please provide at least two ingredients (separated by commas).";
+      }
+    }
+
+    if (!steps.trim()) {
+      newErrors.steps = "Preparation steps are required.";
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
   };
 
-  const newErrors = {};
-  if (!title.trim()) newErrors.title = "Title is required";
-  if (!ingredients.trim()) newErrors.ingredients = "Ingredients are required";
-  else if (ingredients.split(",").length < 2)
-    newErrors.ingredients = "Please list at least two ingredients";
-  if (!steps.trim()) newErrors.steps = "Prepatration steps are required.";
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-  if (Object.keys(newErrors).length > 0) {
-    setErrors(newErrors);
-    return;
-  }
+    if (!validate()) return;
 
-  const newRecipe = { title, ingredients, steps };
-  console.log("New Recipe Submitted:", newRecipe);
+    const recipeData = { title, ingredients, steps };
 
-  setTitle("");
-  setIngredients("");
-  setSteps("");
-  setErrors({});
+    setTitle("");
+    setIngredients("");
+    setSteps("");
+    setErrors({});
+  };
 
   return (
     <div className="max-w-lg mx-auto p-6 bg-white rounded-2xl shadow-lg mt-8">
@@ -51,7 +68,9 @@ const AddRecipeForm = () => {
 
         {/* Ingredients */}
         <div>
-          <label className="block font-semibold mb-1">Ingredients</label>
+          <label className="block font-semibold mb-1">
+            Ingredients (comma separated)
+          </label>
           <textarea
             value={ingredients}
             onChange={(e) => setIngredients(e.target.value)}
