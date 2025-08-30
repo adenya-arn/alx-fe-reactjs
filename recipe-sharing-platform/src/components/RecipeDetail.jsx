@@ -17,7 +17,7 @@ const RecipeDetails = () => {
   if (!recipe) return <p className="text-center mt-10">Loading recipe ...</p>;
 
   return (
-    <div className="max-w-3xl ma-auto p-6">
+    <div className="max-w-3xl ma-auto p-6 bg-white rounded-2xl shadow-lg">
       <img
         src={recipe.image}
         alt={recipe.title}
